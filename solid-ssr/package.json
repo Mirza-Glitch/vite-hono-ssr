@@ -1,0 +1,23 @@
+{
+  "name": "solid-ssr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun server.ts",
+    "build": "bun run build:client && bun run build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "preview": "NODE_ENV=production bun server.ts"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.3",
+    "hono": "^4.9.7",
+    "solid-js": "^1.9.7"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.21",
+    "vite": "^7.0.6",
+    "vite-plugin-solid": "^2.11.8"
+  }
+}
